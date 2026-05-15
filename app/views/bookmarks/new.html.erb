@@ -2,10 +2,7 @@
   <h1>Add a movie</h1>
   <%= simple_form_for [@list, @bookmark] do |f| %>
     <%= f.input :comment %>
-    <%= f.association :movie,
-    include_blank: false,
-    value_method: :id,
-    prompt: "Select a movie..." %>
+    <%= f.association :movie, collection: @movies, prompt: "Select a movie..." %>
     <%= f.submit "Add", class: 'btn btn-success mt-3' %>
   <% end %>
 </div>
